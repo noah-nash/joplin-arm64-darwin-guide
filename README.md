@@ -93,7 +93,7 @@ I haven’t tested it extensively, but I haven’t run into any problems as of y
 
 > Note: due to Apple’s strict notarization and code-signing, shared prebuilt binaries will fail to boot unless you compile them yourself.
 
-> For reference I will provide my unsigned binary on this repo for troubleshooting reasons, but don't expect it to work out of the box.
+> For reference I will provide my [unsigned binary](https://github.com/noah-nash/joplin-arm64-darwin-guide/releases) on this repo for troubleshooting reasons, but don't expect it to work out of the box.
 
 ## Troubleshooting
 - Make sure your NodeJS arch is arm64: `node -p "process.arch"`.
