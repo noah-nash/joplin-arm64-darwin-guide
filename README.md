@@ -45,9 +45,9 @@ In addition, you will have to change the target arch to arm64 in app-desktop/pac
 
 ```
 npm install sharp
-npm install Keytar —build-from-source //for some reason npm will throw errors if not done beforehand
-# npm install -g @dennisameling/keytar-temp@7.4.99 // alt keytar if above does not work
-# npm install sqlite3@4.1.0 —build-from-source // might not be necessary, run if build fails in step 3
+npm install Keytar —build-from-source # For some reason npm will throw errors if not done beforehand
+# npm install -g @dennisameling/keytar-temp@7.4.99 # Alt keytar if above does not work
+# npm install sqlite3@4.1.0 —build-from-source # Might not be necessary, run if build fails in step 3
 ```
 
 ### Set npm config flags
@@ -56,7 +56,7 @@ npm install Keytar —build-from-source //for some reason npm will throw errors 
 Export npm_config_arch=arm64
 Export npm_target_arch=arm64
 Export sdkroot=macosx
-Npm config set python python3 //sqlite3 errors if not set beforehand
+Npm config set python python3 # sqlite3 errors if not set beforehand
 ```
 
 ## 3) Running Joplin
@@ -76,7 +76,7 @@ npm run dist --publish=never --mac --arm64
 Move the previous joplin.app to the trash. Then delete the data folder.
 
 ```
-#Delete Joplin data folder: make sure you backup everything you need beforehand
+# Delete Joplin data folder: make sure you backup everything you need beforehand
 rm -r ~/.config/joplin-desktop
 ```
 
@@ -102,6 +102,6 @@ I haven’t tested it extensively, but I haven’t run into any problems as of y
 - Between failed attempts: Try deleting **all** node_modules folders. `rm -rf node_modules`, and then run `npm i --package-lock-only` to update packages.
 - Run `npm audit fix`,  `npm run clean`, and other commands listed in the [Joplin troubleshooting repo.](https://github.com/laurent22/joplin/blob/dev/readme/build_troubleshooting.md)
 
-If that fails, feel free to [contact me](https:noahnash.net/contact) if you need any help, and I'll try to respond as soon as possible.
+If that fails, feel free to [contact me](https://noahnash.net/contact) if you need any help, and I'll try to respond as soon as possible.
 
 
