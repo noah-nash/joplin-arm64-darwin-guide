@@ -3,7 +3,7 @@ Instructions to build Joplin on M1 Apple Silicon.
 # This is a mirror of the post found on my website at https://noahnash.net/blog/joplin-apple-silicon
 > <strong>Note:</strong> I only update this github repo periodically, my website will contain the most up to date guide.
 
-> Keep in mind this has only been tested with a M1 Mac running Big Sur. In order to compile successfully it is *required* be running the same CPU architecture.
+> Keep in mind this has only been tested with a M1 Mac running Monterey. In order to compile successfully it is *required* be running the same CPU architecture.
 
 ## 1) Install Homebrew and dependencies
 
@@ -26,11 +26,11 @@ xcode-select install
 
 `node -v`, `npm -v`, `yarn -v`
 
-I successfully compiled with these versions:
+As of writing, I successfully compiled with these versions:
 
 Node: v16.13.1
 
-Npm: 8.1.2
+Npm: 9.2.0
 
 Yarn: 3.1.1
 
@@ -43,11 +43,9 @@ git clone https://github.com/laurent22/joplin.git
 cd joplin
 ```
 
-### Modify Joplin .json files
+### Change target architecture 
 
-You will need to update some dependency versions to those that are M1 native. (don't worry it's easy). See: [this PR for a list of files.](https://github.com/laurent22/joplin/pull/5598)
-
-In addition, you will have to change the target arch from x64 to arm64 in app-desktop/package.json. See: [this PR for what to change](https://github.com/laurent22/joplin/pull/5537)
+In addition, you will have to change the build flag's target arch from x64 to arm64 in app-desktop/package.json. See: [this PR for what to change](https://github.com/laurent22/joplin/pull/5537)
 
 ### Install npm packages
 
@@ -105,8 +103,7 @@ When the Joplin app notifies you of an update, you will have to repeat the above
 
 ## Conclusion
 
-
-I haven’t tested it extensively, but I haven’t run into any problems as of yet. But since this is not actively supported by the official project, don’t pester Joplin’s maintainers with errors in the process. If you do notice anything wrong, feel free to create an issue on this repo, and I can try and help.
+Having used this for a few months, I have yet run into any problems so far, but keep in mind that no guarantees are given. Since this is not actively supported by the official project, don’t pester Joplin’s maintainers with any errors encountered in the process. If you do notice anything wrong, feel free to create an issue on this repo, and I can try and help.
 
 > Note: due to Apple’s strict notarization and code-signing, shared prebuilt binaries will fail to boot unless you compile them yourself.
 
