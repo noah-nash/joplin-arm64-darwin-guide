@@ -81,6 +81,8 @@ yarn start
 yarn run dist --publish=never --mac --arm64
 ```
 
+Optional: you may also run `yarn test` to run Joplin's built-in unit tests to check stability.
+
 ### Delete old install
 
 There will be conflicts if you don't delete the old x64 install of Joplin. 
@@ -101,9 +103,11 @@ Open activity monitor to verify that it is using the right CPU architecture. If 
 ### Updating Joplin
 When the Joplin app notifies you of an update, you will have to repeat the above process. Run `git pull origin` to fetch the latest changes, then rebuild using yarn.
 
+If using the End-to-End encryption feature, you may be prompted about Joplin storing it's master password securely in your Mac's keychain. If so, click `always allow`.
+
 ## Conclusion
 
-Having used this for a few months, I have yet run into any problems so far, but keep in mind that no guarantees are given. Since this is not actively supported by the official project, don’t pester Joplin’s maintainers with any errors encountered in the process. If you do notice anything wrong, feel free to create an issue on this repo, and I can try and help.
+Having used this for over a year, I have yet run into any problems so far, but keep in mind that no guarantees are given. Since this is not actively supported by the official project, don’t pester Joplin’s maintainers with any errors encountered in the process. If you do notice anything wrong, feel free to create an issue on this repo, and I can try and help.
 
 > Note: due to Apple’s strict notarization and code-signing, shared prebuilt binaries will fail to boot unless you compile them yourself.
 
