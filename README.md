@@ -3,7 +3,7 @@ Instructions to build Joplin on M1 Apple Silicon.
 # This is a mirror of the post found on my website at https://noahnash.net/blog/joplin-apple-silicon
 > <strong>Note:</strong> I only update this github repo periodically, my website will contain the most up to date guide.
 
-> Keep in mind this has only been tested with a M1 Mac running Monterey. In order to compile successfully it is *required* be running the same CPU architecture.
+> Keep in mind this has only been tested with a M1 Mac running Ventura. In order to compile successfully it is *required* be running the same CPU architecture.
 
 ## 1) Install Homebrew and dependencies
 
