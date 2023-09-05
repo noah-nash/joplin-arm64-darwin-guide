@@ -1,9 +1,11 @@
 # joplin-arm64-darwin-guide
-Instructions to build Joplin on M1 Apple Silicon.
-# This is a mirror of the post found on my website at https://noahnash.net/blog/joplin-apple-silicon
+Instructions to build Joplin on M1 Apple Silicon. 
+## This is a mirror of the post found on my website at https://noahnash.net/blog/joplin-apple-silicon
 > <strong>Note:</strong> I only update this github repo periodically, my website will contain the most up to date guide.
 
 > Keep in mind this has only been tested with a M1 Mac running Ventura. In order to compile successfully it is *required* be running the same CPU architecture.
+
+<strong>Update 2023:</strong> With the August release of Joplin, the application now supports Apple Silicon natively! To download the official arm64 release of Joplin, visit their [Github page](https://github.com/laurent22/joplin/releases). Unless requested, I will no longer be updating the build instructions from here on out. The following guide is provided as-is.
 
 ## 1) Install Homebrew and dependencies
 
@@ -28,11 +30,11 @@ xcode-select install
 
 As of writing, I successfully compiled with these versions:
 
-Node: v16.13.1
+Node: v18.17.1
 
-Npm: 9.2.0
+Npm: 9.8.1
 
-Yarn: 3.1.1
+Yarn: 3.6.3
 
 ## 2) Prepare Files
 
@@ -45,7 +47,7 @@ cd joplin
 
 ### Change target architecture 
 
-In addition, you will have to change the build flag's target arch from x64 to arm64 in app-desktop/package.json. See: [this PR for what to change](https://github.com/laurent22/joplin/pull/5537)
+~~In addition, you will have to change the build flag's target arch from x64 to arm64 in app-desktop/package.json. See: [this PR](https://github.com/laurent22/joplin/pull/5537) for what to change~~ *[No longer required](https://github.com/laurent22/joplin/pull/8452).*
 
 ### Install npm packages
 
@@ -107,11 +109,11 @@ If using the End-to-End encryption feature, you may be prompted about Joplin sto
 
 ## Conclusion
 
-Having used this for over a year, I have yet run into any problems so far, but keep in mind that no guarantees are given. Since this is not actively supported by the official project, don’t pester Joplin’s maintainers with any errors encountered in the process. If you do notice anything wrong, feel free to create an issue on this repo, and I can try and help.
+Having used this for over a year, I have yet run into any problems so far, but keep in mind that no guarantees are given. ~~Since this is not actively supported by the official project, don’t pester Joplin’s maintainers with any errors encountered in the process. If you do notice anything wrong, feel free to create an issue on this repo, and I can try and help.~~ As of [August 2023](https://github.com/laurent22/joplin/releases/tag/v2.12.15), Jopin now supports Apple Silicon natively!
 
 > Note: due to Apple’s strict notarization and code-signing, shared prebuilt binaries will fail to boot unless you compile them yourself.
 
-> For reference I will provide my [unsigned binary](https://github.com/noah-nash/joplin-arm64-darwin-guide/releases) on this repo for troubleshooting reasons, but don't expect it to work out of the box.
+> ~~For reference I will provide my [unsigned binary](https://github.com/noah-nash/joplin-arm64-darwin-guide/releases) on this repo for troubleshooting reasons, but don't expect it to work out of the box.~~ <strong>Update 2023</strong>: To download the official Apple Silicon release of Joplin, visit their [Github](https://github.com/laurent22/joplin/releases). 
 
 ## Troubleshooting
 - Make sure your NodeJS arch is arm64: `node -p "process.arch"`.
